@@ -45,6 +45,3 @@
 1.  在对数据进行预处理时， 应该怎样处理类别型特征？
     > 序号编码（Ordinal Encoding） 、 独热编码（One-hot Encoding） 、 二进制编码
 （Binary Encoding）
-2.  如何处理高维组合特征？
-    > FM
-3.
