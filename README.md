@@ -44,18 +44,21 @@
    + 其他
 
 ### Language
+1. Python
+
+2. C++
 
 ### Other
-3. Logic & Probability
+1. Logic & Probability
    + [逻辑题目](./logic-probability/logic.md)
    + [概率题目](./logic-probability/probability.md)
    
-4. Big data
+2. Big data
    + [MapReduce](./big-data/mapreduce.md)
    + [Technology](./big-data/Technology.md)
    + [Questions](./big-data/questions.md)
 
-5. cs subjects     
+3. cs subjects     
    + [操作系统](./cs-subjects/opreating-systems.md)
    + [计算机网络](./cs-subjects/compute-networks.md) 
    + [数据库](./cs-subjects/dbms.md)
