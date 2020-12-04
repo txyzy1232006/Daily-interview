@@ -5,23 +5,31 @@
 以面试岗位为梳理主线，整理面试之前必看的面试题目，给出高频的面试知识点和面试题。
 
 
-### 基础知识
-1. Machine Learning
+### 机器学习
+1. 特征工程
+2. 模型评估
+3. 经典算法
+   + [Logistic regression](./machine-learning/logistic_regression.md)
+   + [SVM](./machine-learning/SVM.md)
    + [Decision Tree](./machine-learning/DecisionTree.md)
+4. 降维
+5. 非监督学习
+   + [Kmeans](./machine-learning/kmeans.md)
+   + EM
+   + GMM
+   + [K-nearest neighbor](./machine-learning/kNN.md)
+6. 概率图模型
+   + [NaïveBayes](./machine-learning/NaïveBayes.md)
+   + [HMM](./machine-learning/HMM.md)
+   + [CRF](./machine-learning/CRF.md)
+1. Machine Learning
    + [Adaboost](./machine-learning/Adaboost.md)
    + [Frequent Pattern](./machine-learning/frequent_pattern.md)
    + [Tree Embedding](./machine-learning/tree_embedding.md)
    + [GBDT LR](./machine-learning/gbdt_lr.md)
-   + [Kmeans](./machine-learning/kmeans.md)
-   + [Logistic regression](./machine-learning/logistic_regression.md)
    + [Word2Vec](./machine-learning/word2vec.md)
    + [Collaborative Filtering](./machine-learning/collaborative_filtering.md)
-   + [K-nearest neighbor](./machine-learning/kNN.md)
-   + [SVM](./machine-learning/SVM.md)
-   + [NaïveBayes](./machine-learning/NaïveBayes.md)
    + [Metrics](./machine-learning/metrics.md)
-   + [HMM](./machine-learning/HMM.md)
-   + [CRF](./machine-learning/CRF.md)
    + Features selection
    + Optimizers
    
