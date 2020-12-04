@@ -4,7 +4,9 @@
 ## 内容：
 以面试岗位为梳理主线，整理面试之前必看的面试题目，给出高频的面试知识点和面试题。
 
-1. ML
+
+### 基础知识
+1. Machine Learning
    + [Decision Tree](./machine-learning/DecisionTree.md)
    + [Adaboost](./machine-learning/Adaboost.md)
    + [Frequent Pattern](./machine-learning/frequent_pattern.md)
@@ -23,7 +25,13 @@
    + Features selection
    + Optimizers
    
-2. Coding
+2. Deep Learning       
+   + 深度学习基础
+
+3. Recommendation System
+   + TODO
+   
+### Coding   
    + [数组](./coding/Array.md)
    + [排序](./coding/sort.md)
    + [贪心](./coding/greedy.md)
@@ -35,25 +43,24 @@
    + [动态规划](./coding/dp.md)
    + 其他
 
-3. Big data
+### Language
+
+### Other
+3. Logic & Probability
+   + [逻辑题目](./logic-probability/logic.md)
+   + [概率题目](./logic-probability/probability.md)
+   
+4. Big data
    + [MapReduce](./big-data/mapreduce.md)
    + [Technology](./big-data/Technology.md)
    + [Questions](./big-data/questions.md)
-
-4. Logic & Probability
-   + [逻辑题目](./logic-probability/logic.md)
-   + [概率题目](./logic-probability/probability.md)
 
 5. cs subjects     
    + [操作系统](./cs-subjects/opreating-systems.md)
    + [计算机网络](./cs-subjects/compute-networks.md) 
    + [数据库](./cs-subjects/dbms.md)
 
-6. DL       
-   + 深度学习基础
 
-7. Recommendation System
-   + TODO
 
 
 ## 使用方法：
