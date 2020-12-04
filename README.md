@@ -45,9 +45,12 @@
 
 ### Language
 1. Python
-
+   + 关于Python的面试题1 [Github](https://github.com/taizilongxu/interview_python)
+   + 关于Python的面试题2 [Github](https://github.com/kenwoodjw/python_interview_question)
 2. C++
-
+   + C/C++面试基础知识总结 [Github](https://github.com/huihut/interview)
+   + 常见C++笔试面试题整理 [zhihu](https://zhuanlan.zhihu.com/p/69999591)
+   + C/C++问题总结 [Github](https://github.com/linw7/Skill-Tree/blob/master/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80C++.md)
 ### Other
 1. Logic & Probability
    + [逻辑题目](./logic-probability/logic.md)
@@ -63,7 +66,8 @@
    + [计算机网络](./cs-subjects/compute-networks.md) 
    + [数据库](./cs-subjects/dbms.md)
 
-
+4. reference
+   + [Github](https://github.com/lcylmhlcy/Awesome-algorithm-interview)
 
 
 ## 使用方法：
