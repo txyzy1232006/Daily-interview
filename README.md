@@ -7,6 +7,8 @@
 
 ### 机器学习
 1. 特征工程
+   + [数据处理](.machine-learning/data_processing.md)
+   + [特征选择](.machine-learning/feature_selection.md)
 2. 模型评估
    + [Metrics](./machine-learning/metrics.md)
 3. 经典算法
@@ -28,18 +30,17 @@
 8. 采样
 9. 深度学习
 10. 强化学习
-12. 集成学习
-   + [Tree Ensemble Learning](./machine-learning/tree_ensemble_learning.md)
-   + [Adaboost](./machine-learning/Adaboost.md)
-1. Machine Learning
-
-   + [Frequent Pattern](./machine-learning/frequent_pattern.md)
-   + [Metrics](./machine-learning/metrics.md)
+11. 集成学习
+    + [Tree Ensemble Learning](./machine-learning/tree_ensemble_learning.md)
+    + [Adaboost](./machine-learning/Adaboost.md)
 
 ### 推荐系统
-  + [GBDT LR](./machine-learning/gbdt_lr.md)
-  + [Word2Vec](./machine-learning/word2vec.md)
-  + [Collaborative Filtering](./machine-learning/collaborative_filtering.md)
+   + [GBDT LR](./machine-learning/gbdt_lr.md)
+   + [Word2Vec](./machine-learning/word2vec.md)
+   + [Collaborative Filtering](./machine-learning/collaborative_filtering.md)
+
+### 数据挖掘
+   + [Frequent Pattern](./machine-learning/frequent_pattern.md)
 
 ### Coding
    + [数组](./coding/Array.md)
