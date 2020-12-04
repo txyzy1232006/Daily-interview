@@ -8,6 +8,7 @@
 ### 机器学习
 1. 特征工程
 2. 模型评估
+   + [Metrics](./machine-learning/metrics.md)
 3. 经典算法
    + [Logistic regression](./machine-learning/logistic_regression.md)
    + [SVM](./machine-learning/SVM.md)
@@ -22,24 +23,25 @@
    + [NaïveBayes](./machine-learning/NaïveBayes.md)
    + [HMM](./machine-learning/HMM.md)
    + [CRF](./machine-learning/CRF.md)
-1. Machine Learning
+   + 主题模型
+7. 优化算法 Optimizers
+8. 采样
+9. 深度学习
+10. 强化学习
+12. 集成学习
+   + [Tree Ensemble Learning](./machine-learning/tree_ensemble_learning.md)
    + [Adaboost](./machine-learning/Adaboost.md)
-   + [Frequent Pattern](./machine-learning/frequent_pattern.md)
-   + [Tree Embedding](./machine-learning/tree_embedding.md)
-   + [GBDT LR](./machine-learning/gbdt_lr.md)
-   + [Word2Vec](./machine-learning/word2vec.md)
-   + [Collaborative Filtering](./machine-learning/collaborative_filtering.md)
-   + [Metrics](./machine-learning/metrics.md)
-   + Features selection
-   + Optimizers
-   
-2. Deep Learning       
-   + 深度学习基础
+1. Machine Learning
 
-3. Recommendation System
-   + TODO
-   
-### Coding   
+   + [Frequent Pattern](./machine-learning/frequent_pattern.md)
+   + [Metrics](./machine-learning/metrics.md)
+
+### 推荐系统
+  + [GBDT LR](./machine-learning/gbdt_lr.md)
+  + [Word2Vec](./machine-learning/word2vec.md)
+  + [Collaborative Filtering](./machine-learning/collaborative_filtering.md)
+
+### Coding
    + [数组](./coding/Array.md)
    + [排序](./coding/sort.md)
    + [贪心](./coding/greedy.md)
@@ -63,15 +65,15 @@
 1. Logic & Probability
    + [逻辑题目](./logic-probability/logic.md)
    + [概率题目](./logic-probability/probability.md)
-   
+
 2. Big data
    + [MapReduce](./big-data/mapreduce.md)
    + [Technology](./big-data/Technology.md)
    + [Questions](./big-data/questions.md)
 
-3. cs subjects     
+3. cs subjects
    + [操作系统](./cs-subjects/opreating-systems.md)
-   + [计算机网络](./cs-subjects/compute-networks.md) 
+   + [计算机网络](./cs-subjects/compute-networks.md)
    + [数据库](./cs-subjects/dbms.md)
 
 4. reference
@@ -81,5 +83,3 @@
 ## 使用方法：
 面试之前能够花半天时间翻一翻的面试笔记，翻看不是目的，目的是翻看时候的温故、知新和信心。建议每个求职者根据自己的面试经验和项目情况填充该框架，加入自己的理解与感悟，把知识内化于心，刻上自己的印记。
 对于有充足的时间准备面试的小伙伴，不妨将框架中涉及的内容深入学习理解，如果能加上实践项目进行理解，可谓锦上添花。
-
-

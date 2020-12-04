@@ -20,7 +20,7 @@ Xgboost是gbdt的改进或者说是梯度提升树的一种，Xgb可以说是工
 首先，GBDT是一个非常流行的机器学习算法，另外基于GBDT实现的XGBoost也被广泛使用。但是当面对高纬度和大数据量时，其效率和可扩展性很难满足要求。主要的原因是对于每个特征，我们需要浏览所有的数据去计算每个可能分裂点的信息增益，真是非常耗时的。基于此，提出了两大技术：Gradient-based One-Side Sampling (GOSS) and Exclusive Feature Bundling (EFB).
 
 ##　catboost
-CatBoost = Category + Boosting. 
+CatBoost = Category + Boosting.
 2017年7月21日，俄罗斯Yandex开源CatBoost，亮点是在模型中可直接使用Categorical特征并减少了tuning的参数。
 
 
@@ -36,7 +36,7 @@ CatBoost = Category + Boosting.
 3. gbdt格式化损失函数
     $$L(y,f_m(x))=L(y,f_{m-1}(x)+\beta_m b(x;\gamma_m)) \tag{3}$$
 
-4. 泰勒展开式   
+4. 泰勒展开式
 若函数f（x）在包含x0的某个闭区间[a,b]上具有n阶导数，且在开区间（a,b）上具有（n+1）阶导数，则对闭区间[a,b]上任意一点x，成立下式：
    $$f(x)=f(x_0)+f'(x_0)(x-x_0)+\frac{f''(x0)}{2!}(x-x_0)^2+ ... + \frac{f^{(n)}(x_0)}{n!}(x-x_0)^n+R_n(x) \tag{4}$$
    $$f(x+\Delta x)=f(x)+f'(x)\Delta x + \frac{1}{2!}f''(x)\Delta x^2+...+\frac{1}{n!}f^{(n)}(x)\Delta x^n+R_n(x) \tag{5}$$
@@ -58,7 +58,7 @@ CatBoost = Category + Boosting.
     $$\frac{\partial l^{(t)}}{\partial \omega_j}=0 \tag{14}$$
     $$\sum_{i \in I_j}+(\sum_{i \in I_j}h_i + \lambda) \omega_j=0 \tag{15}$$
     $$\omega_j^*=-\frac{\sum_{i \in I_j}g_i}{\sum_{i \in I_j}h_i + \lambda} \tag{16}$$
-    
+
     将上式带入损失函数，得到最小损失：
     $$\hat{l}^{(t)}(q)=-\frac{1}{2}\sum_{j=1}^{T}\frac{(\sum_{i \in I_j}g_i)^2}{\sum_{i \in I_j}h_i+ \lambda}+\gamma T \tag{17}$$
 
@@ -66,8 +66,8 @@ CatBoost = Category + Boosting.
 
     $$L_{split}=\frac{1}{2}
     \left[
-        \frac{（\sum_{i \in I_L}g_i)^2}{\sum_{i \in I_L}h_i+\lambda} + 
-        \frac{（\sum_{i \in I_R}g_i)^2}{\sum_{i \in I_R}h_i+\lambda} - 
+        \frac{（\sum_{i \in I_L}g_i)^2}{\sum_{i \in I_L}h_i+\lambda} +
+        \frac{（\sum_{i \in I_R}g_i)^2}{\sum_{i \in I_R}h_i+\lambda} -
         \frac{（\sum_{i \in I}g_i)^2}{\sum_{i \in I}h_i+\lambda}
         \right ] - \lambda \tag{18}$$
 
@@ -100,7 +100,7 @@ CatBoost = Category + Boosting.
 > gbdt使用基学习器是CART树，CART树是二叉树，每次使用yes or no进行特征选择，数值连续特征使用的最小均方误差，离散值使用的gini指数。在每次划分特征的时候会遍历所有可能的划分点找到最有的特征分裂点，这是用为什么gbdt会比rf慢的主要原因之一。
 
 7. gbdt应用在多分类问题？
-> + 对于多分类任务，GDBT的做法是采用一对多的策略也就是说，对每个类别训练M个分类器。假设有K个类别，那么训练完之后总共有M*K颗树。 
+> + 对于多分类任务，GDBT的做法是采用一对多的策略也就是说，对每个类别训练M个分类器。假设有K个类别，那么训练完之后总共有M*K颗树。
 > + 两层循环的顺序不能改变。也就是说，K个类别都拟合完第一颗树之后才开始拟合第二颗树，不允许先把某一个类别的M颗树学习完，再学习另外一个类别。
 > <img src='../assert/mult_gbdt.png'/>
 
@@ -160,4 +160,4 @@ CatBoost = Category + Boosting.
 1. https://www.cnblogs.com/fujian-code/p/9018114.html
 2. https://blog.csdn.net/u010398493/article/details/77587749
 3. https://www.jianshu.com/p/49ab87122562
-4. https://blog.csdn.net/qq_22238533/article/details/79199605 
+4. https://blog.csdn.net/qq_22238533/article/details/79199605
