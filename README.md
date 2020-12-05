@@ -9,30 +9,38 @@
 1. 特征工程
    + [数据处理](.machine-learning/data_processing.md)
    + [特征选择](.machine-learning/feature_selection.md)
+   + [降维](.machine-learning/pca.md)
+   + 采样
 2. 模型评估
    + [Metrics](./machine-learning/metrics.md)
 3. 经典算法
    + [Logistic regression](./machine-learning/logistic_regression.md)
    + [SVM](./machine-learning/SVM.md)
    + [Decision Tree](./machine-learning/DecisionTree.md)
-4. 降维
-5. 非监督学习
+4. 非监督学习
    + [Kmeans](./machine-learning/kmeans.md)
    + EM
    + GMM
    + [K-nearest neighbor](./machine-learning/kNN.md)
-6. 概率图模型
+5. 概率图模型
    + [NaïveBayes](./machine-learning/NaïveBayes.md)
    + [HMM](./machine-learning/HMM.md)
    + [CRF](./machine-learning/CRF.md)
    + 主题模型
-7. 优化算法 Optimizers
-8. 采样
-9. 深度学习
-10. 强化学习
-11. 集成学习
-    + [Tree Ensemble Learning](./machine-learning/tree_ensemble_learning.md)
-    + [Adaboost](./machine-learning/Adaboost.md)
+6. 优化算法
+   + [常见回归和分类损失函数](./machine-learning/loss_functions.md)
+   + [优化器](./machine-learning/optimizer.md)
+   + [正则化与稀疏性](./machine-learning/regularization.md)
+7. 深度学习
+   + [基础问题](./machine-learning/deep_learning_basic.md)
+   + [Resnet、Inception、Attention](./machine-learning/dl_structure.md)
+   + CNN
+   + [RNN](./machine-learning/rnn.md)
+   + GAN
+8. 强化学习
+9. 集成学习
+   + [Tree Ensemble Learning](./machine-learning/tree_ensemble_learning.md)
+   + [Adaboost](./machine-learning/Adaboost.md)
 
 ### 推荐系统
    + [GBDT LR](./machine-learning/gbdt_lr.md)
