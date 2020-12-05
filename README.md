@@ -7,12 +7,12 @@
 
 ### 机器学习
 1. 特征工程
-   + [数据处理](.machine-learning/data_processing.md)
-   + [特征选择](.machine-learning/feature_selection.md)
-   + [降维](.machine-learning/pca.md)
+   + [数据处理](machine-learning/data_processing.md)
+   + [特征选择](machine-learning/feature_selection.md)
+   + [降维](machine-learning/pca.md)
    + 采样
 2. 模型评估
-   + [Metrics](./machine-learning/metrics.md)
+   + [Metrics](/machine-learning/metrics.md)
 3. 经典算法
    + [Logistic regression](./machine-learning/logistic_regression.md)
    + [SVM](./machine-learning/SVM.md)
