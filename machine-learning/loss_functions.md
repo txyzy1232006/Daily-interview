@@ -16,13 +16,13 @@ __常见的回归损失函数有__：
 
 Huber损失是对二者的综合，当$|y-f(x)|$小于一个事先指定的值$\\delta$时，变为平方损失，大于$\\delta$时，则变成类似于绝对值损失，因此也是比较robust的损失函数。三者的图形比较如下：
 
-![](https://raw.githubusercontent.com/massquantity/Loss-Functions/master/Regression.png)
+![](/assert/Regression.png)
 
 ***
 ## 分类问题的损失函数
 对于二分类问题，$y\in \left\{-1,+1 \right\}$，损失函数常表示为关于$yf(x)$的单调递减形式。如下图：
 
-![](https://raw.githubusercontent.com/massquantity/Loss-Functions/master/Monotone%20Decreasing.png)
+![](/assert/Monotone_Decreasing.png)
 
 $yf(x)$ 被称为**margin**，其作用类似于回归问题中的残差$y-f(x)$。
 
@@ -77,13 +77,13 @@ modified huber loss结合了hinge loss和logistic loss的优点，既能在$yf(x
 
 最后来张全家福：
 
-![](https://raw.githubusercontent.com/massquantity/Loss-Functions/master/Classification.png)
+![](/assert/Classification.png)
 
 从上图可以看出上面介绍的这些损失函数都可以看作是0-1损失的单调连续近似函数，而因为这些损失函数通常是凸的连续函数，因此常用来代替0-1损失进行优化。它们的相同点是都随着$margin \rightarrow -\infty$而加大惩罚；不同点在于，logistic loss和hinge loss都是线性增长，而exponential loss是以指数增长。
 
 值得注意的是上图中modified huber loss的走向和exponential loss差不多，并不能看出其robust的属性。其实这和算法时间复杂度一样，成倍放大了之后才能体现出巨大差异：
 
-![](https://raw.githubusercontent.com/massquantity/Loss-Functions/master/Classification_2.png)
+![](/assert/Classification_2.png)
 
 
 ## 问题
@@ -93,6 +93,5 @@ modified huber loss结合了hinge loss和logistic loss的优点，既能在$yf(x
 > 从平方损失函数运用到多分类场景下，可知平方损失函数对每一个输出结果都十分看重，而交叉熵损失函数只对正确分类的结果看重。平方损失函数除了让正确分类尽量变大，还会让错误分类都变得更加平均，但分类问题中后面的这个调整使没必要的。但是对于回归问题这样的考虑就显得重要了，因而回归问题上使用交叉熵并不适合。
 
 >+ 理论角度分析
-> 平方数损失函数假设最终结果都服从高斯分布，而高斯分布实际上是一个连续变量，并不是一个离散变量。如果假设结果变量服从均值 $u$，方差为 $\sigma$，那么利用最大似然法就可以优化它的负对数似然，公式最终变为了：
-![](https://upload-images.jianshu.io/upload_images/5865417-593427b597dea011.png?imageMogr2/auto-orient/strip|imageView2/2/w/442/format/webp)
-出去与$y$无关的项目，最后剩下的就是平方损失函数的形式。
+> 平方数损失函数假设最终结果都服从高斯分布，而高斯分布实际上是一个连续变量，并不是一个离散变量。如果假设结果变量服从均值 $u$，方差为 $\sigma$，那么利用最大似然法就可以优化它的负对数似然，如下，除去与$y$无关的项目，最后剩下的就是平方损失函数的形式。  
+![](/assert/max_likelihood_gaussian.png)

@@ -14,52 +14,52 @@
 2. 模型评估
    + [Metrics](/machine-learning/metrics.md)
 3. 经典算法
-   + [Logistic regression](./machine-learning/logistic_regression.md)
-   + [SVM](./machine-learning/SVM.md)
-   + [Decision Tree](./machine-learning/DecisionTree.md)
+   + [Logistic regression](/machine-learning/logistic_regression.md)
+   + [SVM](/machine-learning/SVM.md)
+   + [Decision Tree](/machine-learning/DecisionTree.md)
 4. 非监督学习
-   + [Kmeans](./machine-learning/kmeans.md)
+   + [Kmeans](/machine-learning/kmeans.md)
    + EM
    + GMM
-   + [K-nearest neighbor](./machine-learning/kNN.md)
+   + [K-nearest neighbor](/machine-learning/kNN.md)
 5. 概率图模型
-   + [NaïveBayes](./machine-learning/NaïveBayes.md)
-   + [HMM](./machine-learning/HMM.md)
-   + [CRF](./machine-learning/CRF.md)
+   + [NaïveBayes](/machine-learning/NaïveBayes.md)
+   + [HMM](/machine-learning/HMM.md)
+   + [CRF](/machine-learning/CRF.md)
    + 主题模型
 6. 优化算法
-   + [常见回归和分类损失函数](./machine-learning/loss_functions.md)
-   + [优化器](./machine-learning/optimizer.md)
-   + [正则化与稀疏性](./machine-learning/regularization.md)
+   + [常见回归和分类损失函数](/machine-learning/loss_functions.md)
+   + [优化器](/machine-learning/optimizer.md)
+   + [正则化与稀疏性](/machine-learning/regularization.md)
 7. 深度学习
-   + [基础问题](./machine-learning/deep_learning_basic.md)
-   + [Resnet、Inception、Attention](./machine-learning/dl_structure.md)
+   + [基础问题](/machine-learning/deep_learning_basic.md)
+   + [Resnet、Inception、Attention](/machine-learning/dl_structure.md)
    + CNN
-   + [RNN](./machine-learning/rnn.md)
+   + [RNN](/machine-learning/rnn.md)
    + GAN
 8. 强化学习
 9. 集成学习
-   + [Tree Ensemble Learning](./machine-learning/tree_ensemble_learning.md)
-   + [Adaboost](./machine-learning/Adaboost.md)
+   + [Tree Ensemble Learning](/machine-learning/tree_ensemble_learning.md)
+   + [Adaboost](/machine-learning/Adaboost.md)
 
 ### 推荐系统
-   + [GBDT LR](./machine-learning/gbdt_lr.md)
-   + [Word2Vec](./machine-learning/word2vec.md)
-   + [Collaborative Filtering](./machine-learning/collaborative_filtering.md)
+   + [GBDT LR](/machine-learning/gbdt_lr.md)
+   + [Word2Vec](/machine-learning/word2vec.md)
+   + [Collaborative Filtering](/machine-learning/collaborative_filtering.md)
 
 ### 数据挖掘
-   + [Frequent Pattern](./machine-learning/frequent_pattern.md)
+   + [Frequent Pattern](/machine-learning/frequent_pattern.md)
 
 ### Coding
-   + [数组](./coding/Array.md)
-   + [排序](./coding/sort.md)
-   + [贪心](./coding/greedy.md)
-   + [字符串](./coding/string.md)
-   + [链表](./coding/linklist.md)
-   + [二叉树](./coding/binaryTree.md)
-   + [图](./coding/graph.md)
-   + [搜索](./coding/search.md)
-   + [动态规划](./coding/dp.md)
+   + [数组](/coding/Array.md)
+   + [排序](/coding/sort.md)
+   + [贪心](/coding/greedy.md)
+   + [字符串](/coding/string.md)
+   + [链表](/coding/linklist.md)
+   + [二叉树](/coding/binaryTree.md)
+   + [图](/coding/graph.md)
+   + [搜索](/coding/search.md)
+   + [动态规划](/coding/dp.md)
    + 其他
 
 ### Language
@@ -72,18 +72,18 @@
    + C/C++问题总结 [Github](https://github.com/linw7/Skill-Tree/blob/master/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80C++.md)
 ### Other
 1. Logic & Probability
-   + [逻辑题目](./logic-probability/logic.md)
-   + [概率题目](./logic-probability/probability.md)
+   + [逻辑题目](/logic-probability/logic.md)
+   + [概率题目](/logic-probability/probability.md)
 
 2. Big data
-   + [MapReduce](./big-data/mapreduce.md)
-   + [Technology](./big-data/Technology.md)
-   + [Questions](./big-data/questions.md)
+   + [MapReduce](/big-data/mapreduce.md)
+   + [Technology](/big-data/Technology.md)
+   + [Questions](/big-data/questions.md)
 
 3. cs subjects
-   + [操作系统](./cs-subjects/opreating-systems.md)
-   + [计算机网络](./cs-subjects/compute-networks.md)
-   + [数据库](./cs-subjects/dbms.md)
+   + [操作系统](/cs-subjects/opreating-systems.md)
+   + [计算机网络](/cs-subjects/compute-networks.md)
+   + [数据库](/cs-subjects/dbms.md)
 
 4. reference
    + [Github](https://github.com/lcylmhlcy/Awesome-algorithm-interview)
