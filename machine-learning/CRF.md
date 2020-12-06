@@ -10,24 +10,28 @@
 原则上，条件随机场的图模型布局是可以任意给定的，一般**常用的布局是链接式**的架构，链接式架构不论在训练（training）、推论（inference）、或是解码（decoding）上，都存在有效率的算法可供演算。
 条件随机场跟隐马尔可夫模型常被一起提及，条件随机场对于输入和输出的机率分布，没有如隐马尔可夫模型那般强烈的假设存在 [补充：因为HMM模型假设后面状态和前面无关]。
 
-## 核心公式 ##
-###1.条件随机场预测的维特比算法求解过程：
+## 核心公式
+### 1.条件随机场预测的维特比算法求解过程：
 
 
 > 输入：模型特征向量F(y,x)和权值向量w，观测序列x=(x1,x2,…,xn);
 输出：最优路径y^*=(y_1^*,y_2^*,…,y_n^*)
+
 初始化：
 	 ![](https://m.qpic.cn/psb?/V11thrEZ18EV2M/vdZEui1slIkS1KzJzAQVwS34OgZW*6g6LvQsCJxv*dA!/b/dLYAAAAAAAAA&bo=zQErAAAAAAADB8U!&rf=viewer_4)
+	 
 递推：
 	 ![](http://m.qpic.cn/psb?/V11thrEZ18EV2M/aVoN66f4shajQcPrzYsO8fGTiPG*dXNfvppIyuV870Q!/b/dL8AAAAAAAAA&bo=XQJdAAAAAAADFzA!&rf=viewer_4)
+	 
 终止：
 	 ![](http://m.qpic.cn/psb?/V11thrEZ18EV2M/E2aVlLcp*QF8f4vaiX2DqwT3Wq2hwFsPsvR*ZSK6iPg!/b/dLYAAAAAAAAA&bo=HwFcAAAAAAADF3A!&rf=viewer_4)
+	 
 返回路径：
 	 ![](http://m.qpic.cn/psb?/V11thrEZ18EV2M/3udfuP7mwmvBHGj9x5H8V2i5W*p2qH.Um5y.Rlw8Ero!/b/dL8AAAAAAAAA&bo=VAEuAAAAAAADF0k!&rf=viewer_4)
 
 
 
-###2.链式条件随机场[chain-structured CRF]条件概率公式：
+### 2.链式条件随机场[chain-structured CRF]条件概率公式：
 
 
 > ![](https://m.qpic.cn/psb?/V11thrEZ18EV2M/eTdKbPFTkwuSvO5b3v1BQpaBcwx.WNKbs1DDZ42Z3l8!/b/dL4AAAAAAAAA&bo=ywFAAAAAAAARB7o!&rf=viewer_4)
@@ -35,7 +39,7 @@
 
 
 
-## 注意要点 ##
+## 注意要点
 
 ----------
 
@@ -84,7 +88,7 @@
 
 ----------
 1.HMM、MEMM和CRF模型的比较
->这三个模型都可以用来作为序列化标注模型，但是各自具有自身的特性。
+> 这三个模型都可以用来作为序列化标注模型，但是各自具有自身的特性。
 
     1）HMM模型是对转移概率（隐藏状态转移到隐藏状态的概率）和表现概率（隐藏状态到观察状态的概率）直接建模，统计共现概率；
     2）MEMM模型是对转移概率和表现概率建立联合概率，统计时统计的是条件概率，而非共现概率。MEMM容易陷入局部最优，主要因为是MEMM只在局部做归一化；
@@ -107,15 +111,15 @@
     对于CRF，判断这个标注成立的概率为：
               P = F(s转移到s，'我'标记为s).... F为一个函数，是在全局范围统计归一化的概率，而不是像MEMM在局部统一归一化的概率。
 
-2.简单描述一下NER任务中的BiLSTM-CRF
+2.简单描述一下NER任务中的BiLSTM-CRF  
 3.常见的概率图模型中，哪些是生成式模型，哪些是判别式模型？
-
+> 朴素贝叶斯、贝叶斯网络、pLSA、LDA等模型都是先对联合概率分布进行建模，然后再通过计算边缘分布得到对变量的预测，所以它们都属于生成式模型；而最大熵模型是直接对条件概率分布进行建模，因此属于判别式模型。隐马尔可夫模型和条件随机场模型是对序列数据进行建模的方法，其中隐马尔可夫模型属于生成式模型，最大熵马尔可夫模型、条件随机场属于判别式模型。
 
 
 ## 参考 ##
-1.条件随机场定义参考维基百科
-2.Bi-LSTM-CRF算法解析参考: https://createmomo.github.io/
-3.数学之美 - 吴军
-4.百面机器学习 - 诸葛越&葫芦娃
-5.NLP汉语自然语言处理原理与实践 - 郑捷
+1.条件随机场定义参考维基百科  
+2.Bi-LSTM-CRF算法解析参考: https://createmomo.github.io/  
+3.数学之美 - 吴军  
+4.百面机器学习 - 诸葛越&葫芦娃  
+5.NLP汉语自然语言处理原理与实践 - 郑捷  
 6.http://blog.sina.com.cn/s/blog_6d1875160101gy4e.html

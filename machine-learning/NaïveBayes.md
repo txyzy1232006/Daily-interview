@@ -16,8 +16,8 @@ $$P(Y|X_1,..,X_i)=\frac{P(X_1,..,X_i)P(Y)}{P(X_1,...,X_i)}$$
 
 2. 连续概率模型（采用最大似然估计）假设概率的密度函数为:
 $$P(X_i|Y)=\frac{1}{\sqrt{2\Pi}\sigma_Y}e^{\frac{{(X_i-\mu_\gamma)}^2}{2\sigma_\gamma}}$$
-其中:
-$$\hat{\mu}_\gamma=\frac{1}{|D_\gamma|}\sum_{X \in D_c}X$$
+其中:  
+$$\hat{\mu}_\gamma=\frac{1}{|D_\gamma|}\sum_{X \in D_c}X$$  
 
 $$\hat{\sigma}_\gamma^2=\frac{1}{|D_\gamma|} \sum_{X \in D_\gamma}(X-\hat{\mu_\gamma})(X-\hat{\mu_\gamma})^T$$
 

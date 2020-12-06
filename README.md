@@ -17,9 +17,9 @@
    + [Logistic regression](/machine-learning/logistic_regression.md)
    + [SVM](/machine-learning/SVM.md)
    + [Decision Tree](/machine-learning/DecisionTree.md)
+   + [K-nearest neighbor](/machine-learning/kNN.md)
 4. 非监督学习
    + [Kmeans](/machine-learning/kmeans.md)
-   + [K-nearest neighbor](/machine-learning/kNN.md)
 5. 概率图模型
    + [NaïveBayes](/machine-learning/NaïveBayes.md)
    + [HMM](/machine-learning/HMM.md)
