@@ -19,8 +19,6 @@
    + [Decision Tree](/machine-learning/DecisionTree.md)
 4. 非监督学习
    + [Kmeans](/machine-learning/kmeans.md)
-   + EM
-   + GMM
    + [K-nearest neighbor](/machine-learning/kNN.md)
 5. 概率图模型
    + [NaïveBayes](/machine-learning/NaïveBayes.md)
