@@ -99,10 +99,9 @@ $$AA^H = U\Sigma V^HVΣ^HU^H=U(ΣΣ^H)U^H \\ A^HA=VΣ^HU^HUΣV^H=V(Σ^HΣ)V^H$$
 4. 对 $AA^H$ 和 $A^HA$ 的非零特征值求平方根，对应上述特征向量的位置，填入 $\lambda$ 的对角元。
 
 #### SVD 压缩
-> SVD 取 top k 就是压缩思想。  
+> SVD 取 top k 就是压缩思想。
 > $$A_{m \times n} = U_{m \times m} \cdot {\Sigma}_{m \times n} \cdot V_{n \times n}$$
-
-> 取 top k 个奇异值，则有
+> 取 top k 个奇异值，则有  
 > $$A_{m \times n} \approx M_{m \times k} \cdot N_{k \times n}$$
 
 #### SVD 与 PCA 的关系
