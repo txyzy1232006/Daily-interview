@@ -99,14 +99,15 @@ $$AA^H = U\Sigma V^HVΣ^HU^H=U(ΣΣ^H)U^H \\ A^HA=VΣ^HU^HUΣV^H=V(Σ^HΣ)V^H$$
 4. 对 $AA^H$ 和 $A^HA$ 的非零特征值求平方根，对应上述特征向量的位置，填入 $\lambda$ 的对角元。
 
 #### SVD 压缩
-> SVD 取 top k 就是压缩思想。
-> $$A_{m \times n} = U_{m \times m} \cdot {\Sigma}_{m \times n} \cdot V_{n \times n}$$
-> 取 top k 个奇异值，则有
-> $$A_{m \times n} \approx M_{m \times k} \cdot N_{k \times n}$$
+ SVD 取 top k 就是压缩思想。
+ $$A_{m \times n} = U_{m \times m} \cdot {\Sigma}_{m \times n} \cdot V_{n \times n}$$
+
+ 取 top k 个奇异值，则有
+ $$A_{m \times n} \approx M_{m \times k} \cdot N_{k \times n}$$
 
 #### SVD 与 PCA 的关系
-> PCA 中计算协方差矩阵 $X^TX$ 对 SVD 分解中使用的右奇异矩阵，PCA 可由 SVD 实现。
-> SVD 取 top k 就是压缩思想，PCA 中 $XX^T$ 实际是一种列压缩， $X^TX$是对行压缩。
+PCA 中计算协方差矩阵 $X^TX$ 对 SVD 分解中使用的右奇异矩阵，PCA 可由 SVD 实现。
+SVD 取 top k 就是压缩思想，PCA 中 $XX^T$ 实际是一种列压缩， $X^TX$是对行压缩。
 
 #### SVD 在推荐召回中的实际使用
 SVD 计算量大且要求数据稠密，但实际场景中不可能满足。解决方法：Funky SVD、LFM。
