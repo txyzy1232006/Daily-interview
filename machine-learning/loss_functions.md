@@ -6,11 +6,11 @@
 
 __常见的回归损失函数有__：
 + **平方损失 (squared loss)** ：
-  > $(y-f(x))^2$
+   $$(y-f(x))^2$$
 + **绝对值 (absolute loss)** :
-  > $|y-f(x)|$
+   $$|y-f(x)|$$
 + **Huber损失 (huber loss)** :
-  > $\left\{\begin{matrix}\frac12[y-f(x)]^2 \qquad |y-f(x)| \leq \delta \\ \delta|y-f(x)| - \frac12\delta^2 \qquad |y-f(x)|> \delta\end{matrix}\right.$
+   $$\left\{\begin{matrix}\frac12[y-f(x)]^2 \qquad |y-f(x)| \leq \delta \\ \delta|y-f(x)| - \frac12\delta^2 \qquad |y-f(x)|> \delta\end{matrix}\right.$$
 
 其中最常用的是平方损失，然而其缺点是对于异常点会施以较大的惩罚，因而不够robust。如果有较多异常点，则绝对值损失表现较好，但绝对值损失的缺点是在$y-f(x)=0$处不连续可导，因而不容易优化。
 
@@ -20,11 +20,11 @@ Huber损失是对二者的综合，当$|y-f(x)|$小于一个事先指定的值$\
 
 ***
 ## 分类问题的损失函数
-对于二分类问题，$y\in \left\{-1,+1 \right\}$，损失函数常表示为关于$yf(x)$的单调递减形式。如下图：
+对于二分类问题，$y\in \{-1,+1 \}$，损失函数常表示为关于$yf(x)$的单调递减形式。如下图：
 
 ![](/assert/Monotone_Decreasing.png)
 
-$yf(x)$ 被称为**margin**，其作用类似于回归问题中的残差$y-f(x)$。
+$yf(x)$ 被称为**margin**，其作用类似于回归问题中的残差 $y-f(x)$。
 
 二分类问题中的分类规则通常为 $sign(f(x)) = \left\{\begin{matrix} +1 \qquad if\;\;f(x) \geq 0 \\ -1 \qquad if\;\;f(x) < 0\end{matrix}\right.$
 
@@ -45,7 +45,7 @@ $$g(f(x)) = P(y=1|x) = \frac{1}{1+e^{-f(x)}}$$
 而
 $$P(y=-1|x) = 1-P(y=1|x) = 1-\frac{1}{1+e^{-f(x)}} = \frac{1}{1+e^{f(x)}} = g(-f(x))$$
 
-因此利用$y\in\left\{-1,+1\right\}$，可写为$P(y|x) = \frac{1}{1+e^{-yf(x)}}$，此为一个概率模型，利用极大似然的思想：
+因此利用 $y\in \{-1,+1 \}$，可写为$P(y|x) = \frac{1}{1+e^{-yf(x)}}$，此为一个概率模型，利用极大似然的思想：
 
 $$max(\prod P(y|x)) = max(\prod \frac{1}{1+e^{-yf(x)}})$$
 两边取对数，又因为是求损失函数，则将极大转为极小：
@@ -53,7 +53,7 @@ $$max(\sum logP(y|x)) = -min(\sum log(\frac{1}{1+e^{-yf(x)}})) = min(\sum log(1+
 这样就得到了logistic loss。
 
 
-如果定义$t = \frac{y+1}2 \in \left\{0,1\right\}$，则极大似然法可写为：
+如果定义 $t = \frac{y+1} 2 \in \{0,1\}$，则极大似然法可写为：
 $$\prod (P(y=1|x))^{t}((1-P(y=1|x))^{1-t}$$
 取对数并转为极小得：
 
@@ -62,7 +62,7 @@ $$\sum [-t\log P(y=1|x) - (1-t)\log (1-P(y=1|x))]$$
 
 ### 3、Hinge loss
 $$L(y,f(x)) = max(0,1-yf(x))$$
-hinge loss为svm中使用的损失函数，hinge loss使得$yf(x)>1$的样本损失皆为0，由此带来了稀疏解，使得svm仅通过少量的支持向量就能确定最终超平面。
+hinge loss为svm中使用的损失函数，hinge loss使得 $yf(x)>1$ 的样本损失皆为0，由此带来了稀疏解，使得svm仅通过少量的支持向量就能确定最终超平面。
 
 ### 4、指数损失(Exponential loss)
 $$L(y,f(x)) = e^{-yf(x)}$$
@@ -70,7 +70,7 @@ exponential loss为AdaBoost中使用的损失函数，使用exponential loss能�
 
 ### 5、modified Huber loss
 $$ L(y,f(x)) = \left \{\begin{matrix} max(0,1-yf(x))^2 \qquad if \;\;yf(x)\geq-1 \\ \qquad-4yf(x) \qquad\qquad\;\; if\;\; yf(x)&lt;-1\end{matrix}\right.\qquad$$
-modified huber loss结合了hinge loss和logistic loss的优点，既能在$yf(x) > 1$时产生稀疏解提高训练效率，又能进行概率估计。另外其对于 $(yf(x) < -1)$ 样本的惩罚以线性增加，这意味着受异常点的干扰较少，比较robust。scikit-learn中的SGDClassifier同样实现了modified huber loss。
+modified huber loss结合了hinge loss和logistic loss的优点，既能在 $yf(x) > 1$ 时产生稀疏解提高训练效率，又能进行概率估计。另外其对于 $(yf(x) < -1)$ 样本的惩罚以线性增加，这意味着受异常点的干扰较少，比较robust。scikit-learn中的SGDClassifier同样实现了modified huber loss。
 
 
 
@@ -90,8 +90,7 @@ modified huber loss结合了hinge loss和logistic loss的优点，既能在$yf(x
 1. 平方误差损失函数和交叉熵损失函数分别适合什么场景？
 > 如果学习模型致力于解决的问题是回归问题的连续变量，那么使用平方损失函数较为合适；若是对于分类问题的离散Ont-Hot向量，那么交叉熵损失函数较为合适。
 >+ 直观理解
-> 从平方损失函数运用到多分类场景下，可知平方损失函数对每一个输出结果都十分看重，而交叉熵损失函数只对正确分类的结果看重。平方损失函数除了让正确分类尽量变大，还会让错误分类都变得更加平均，但分类问题中后面的这个调整使没必要的。但是对于回归问题这样的考虑就显得重要了，因而回归问题上使用交叉熵并不适合。
-
+> 从平方损失函数运用到多分类场景下，可知平方损失函数对每一个输出结果都十分看重，而交叉熵损失函数只对正确分类的结果看重。平方损失函数除了让正确分类尽量变大，还会让错误分类都变得更加平均，但分类问题中后面的这个调整使没必要的。但是对于回归问题这样的考虑就显得重要了，因而回归问题上使用交叉熵并不适合。 
 >+ 理论角度分析
 > 平方数损失函数假设最终结果都服从高斯分布，而高斯分布实际上是一个连续变量，并不是一个离散变量。如果假设结果变量服从均值 $u$，方差为 $\sigma$，那么利用最大似然法就可以优化它的负对数似然，如下，除去与$y$无关的项目，最后剩下的就是平方损失函数的形式。  
 ![](/assert/max_likelihood_gaussian.png)
