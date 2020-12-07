@@ -50,7 +50,7 @@
      + [深度模型](/machine-learning/ctr_deep_models.md)
      + GNN
      + 多兴趣、多目标
-   + 策略ctr_deep_models
+   + 策略
      + 召回策略
      + 实时
      + 冷启动
