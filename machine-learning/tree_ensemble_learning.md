@@ -17,7 +17,7 @@ GBDT也是迭代，使用了前向分布算法，但是弱学习器限定了只�
 Xgboost是gbdt的改进或者说是梯度提升树的一种，Xgb可以说是工程上的最佳实践模型，简单的说xgb=gbdt+二阶梯度信息+随机特征和样本选择+特征百分位值加速+空值特征自动划分。还有必要的正则项和最优特征选择时的并行计算等。
 
 ## Lightgbm
-首先，GBDT是一个非常流行的机器学习算法，另外基于GBDT实现的XGBoost也被广泛使用。但是当面对高纬度和大数据量时，其效率和可扩展性很难满足要求。主要的原因是对于每个特征，我们需要浏览所有的数据去计算每个可能分裂点的信息增益，真是非常耗时的。基于此，提出了两大技术：Gradient-based One-Side Sampling (GOSS) and Exclusive Feature Bundling (EFB).
+首先，GBDT是一个非常流行的机器学习算法，另外基于GBDT实现的XGBoost也被广泛使用。但是当面对高纬度和大数据量时，其效率和可扩展性很难满足要求。主要的原因是对于每个特征，我们需要浏览所有的数据去计算每个可能分裂点的信息增益，真是非常耗时的。基于此，提出了两大技术：Gradient-based One-Side Sampling (GOSS) and Exclusive Feature Bundling (EFB)。
 
 ##　catboost
 CatBoost = Category + Boosting.
@@ -28,7 +28,7 @@ CatBoost = Category + Boosting.
 1. gbdt的前向分布公式
    $$f_m(x)=f_{m-1}(x)+\beta_m b(x;\gamma_m) \tag{1}$$
 
-2. gbdt的第m轮的扶梯度公式
+2. gbdt的第m轮的梯度公式
     $$-\left[
         \frac{\partial L(y,f(x_i))}{\partial f(x_i)}
     \right]_{f(x)=f_{m-1}(x)} \tag{2}$$
@@ -40,21 +40,22 @@ CatBoost = Category + Boosting.
 若函数f（x）在包含x0的某个闭区间[a,b]上具有n阶导数，且在开区间（a,b）上具有（n+1）阶导数，则对闭区间[a,b]上任意一点x，成立下式：
    $$f(x)=f(x_0)+f'(x_0)(x-x_0)+\frac{f''(x0)}{2!}(x-x_0)^2+ ... + \frac{f^{(n)}(x_0)}{n!}(x-x_0)^n+R_n(x) \tag{4}$$
    $$f(x+\Delta x)=f(x)+f'(x)\Delta x + \frac{1}{2!}f''(x)\Delta x^2+...+\frac{1}{n!}f^{(n)}(x)\Delta x^n+R_n(x) \tag{5}$$
-    其中，$R_n(x)$是$(x-x_0)^n的高阶无穷小.$
+    其中，$R_n(x)$ 是 $(x-x_0)^n$ 的高阶无穷小.
 
 5. xgboost的目标公式(t轮迭代)
    $$obj^{(t)}=\sum_{i=1}^{n}l(y_i,\hat{y}_i^t)+\sum_{i=1}^{t}\Omega(f_i) \tag{6}$$
    $$=\sum_{i=1}^{n}l(y,\hat y_{i}^{(t-1)}+f_t(x_i))+\Omega(f_t)+constant \tag{7}$$
 
 6. xgboost损失函数的泰勒二阶展开
-    $$l^{(t)} \eqsim \sum_{i=1}^{n}[l(y_i,\hat y ^{(t-1)})+g_i f_t(x_i) + \frac{1}{2}h_i f_t^2(x_i)]+\Omega(f_t) \tag{8}$$
-    其中，$l(y_i,\hat y ^{(t-1)})$是常数，$g_i=\partial_{\hat{y}^{(t-1)}}l(y_i, \hat{y}^{(t-1)})$, $h_i=\partial_{\hat{y}^{(t-1)}}^2l(y_i, \hat{y}^{(t-1)})$. 常数对目标函数的优化不相关，于是可以将目标函数转化为如下:
+    $$l^{(t)} \eqsim \sum_{i=1}^{n}[l(y_i,\hat y ^{(t-1)})+g_i f_t(x_i) + \frac{1}{2}h_i f_t^2(x_i)]+\Omega(f_t) \tag{8}$$  
+    其中，$l(y_i,\hat y ^{(t-1)})$ 是常数，$g_i=\partial_{\hat{y}^{(t-1)}}l(y_i, \hat{y}^{(t-1)})$, $h_i=\partial_{\hat{y}^{(t-1)}}^2l(y_i, \hat{y}^{(t-1)})$.   
+    常数对目标函数的优化不相关，于是可以将目标函数转化为如下:
     $$l^{(t)} = \sum_{i=1}^{n}[g_i f_t(x_i) + \frac{1}{2}h_i f_t^2(x_i)]+\Omega(f_t) \tag{9}$$
-    $$=\sum_{i=1}^{n}[g_i f_t(x_i) + \frac{1}{2}h_i f_t^2(x_i)]+\lambda T+\frac{1}{2}\sum_{j=1}^{T}\omega_j^2  \tag{10}$$
-    $$=\sum_{j=1}^{T}[(\sum_{i \in I_j}g_i) \omega_j + \frac{1}{2}(\sum_{i \in I_j}h_i) \omega_j^2] + \lambda T + \frac{1}{2}\sum_{i=1}^{T} \omega_j^2  \tag{11}$$
-    $$=\sum_{i=1}^{n}[g_i f_t(x_i) + \frac{1}{2}h_i f_t^2(x_i)]+\lambda T+\frac{1}{2}\sum_{j=1}^{T}\omega_j^2  \tag{12}$$
-    $$=\sum_{j=1}^{T}[(\sum_{i \in I_j}g_i) \omega_j + \frac{1}{2}(\sum_{i \in I_j}h_i+\lambda) \omega_j^2] + \lambda T  \tag{13}$$
-    求上式最小化的参数，对$\omega$求导数并另其等于0，得到下式:
+    $$=\sum_{i=1}^{n}[g_i f_t(x_i) + \frac{1}{2}h_i f_t^2(x_i)]+\gamma T+\frac{1}{2}\lambda\sum_{j=1}^{T}\omega_j^2  \tag{10}$$
+    $$=\sum_{j=1}^{T}[(\sum_{i \in I_j}g_i) \omega_j + \frac{1}{2}(\sum_{i \in I_j}h_i) \omega_j^2] + \gamma T + \frac{1}{2}\lambda\sum_{i=1}^{T} \omega_j^2  \tag{11}$$
+    $$=\sum_{i=1}^{n}[g_i f_t(x_i) + \frac{1}{2}h_i f_t^2(x_i)]+\gamma T+\frac{1}{2}\lambda\sum_{j=1}^{T}\omega_j^2  \tag{12}$$
+    $$=\sum_{j=1}^{T}[(\sum_{i \in I_j}g_i) \omega_j + \frac{1}{2}(\sum_{i \in I_j}h_i+\lambda) \omega_j^2] + \gamma T  \tag{13}$$
+    求上式最小化的参数，对 $\omega$ 求导数并另其等于0，得到下式:
     $$\frac{\partial l^{(t)}}{\partial \omega_j}=0 \tag{14}$$
     $$\sum_{i \in I_j}+(\sum_{i \in I_j}h_i + \lambda) \omega_j=0 \tag{15}$$
     $$\omega_j^*=-\frac{\sum_{i \in I_j}g_i}{\sum_{i \in I_j}h_i + \lambda} \tag{16}$$
@@ -69,7 +70,7 @@ CatBoost = Category + Boosting.
         \frac{（\sum_{i \in I_L}g_i)^2}{\sum_{i \in I_L}h_i+\lambda} +
         \frac{（\sum_{i \in I_R}g_i)^2}{\sum_{i \in I_R}h_i+\lambda} -
         \frac{（\sum_{i \in I}g_i)^2}{\sum_{i \in I}h_i+\lambda}
-        \right ] - \lambda \tag{18}$$
+        \right ] - \lambda \tag{18}  
 
 
 # 算法十问
@@ -85,7 +86,7 @@ CatBoost = Category + Boosting.
 4. 解释一个什么是gb，什么是dt，即为什么叫做gbdt？
 > gbdt(Gradient Boosting Decision Tree),dt是指Decision Tree表示使用决策树作为基学习器，使用的cart树，gb表示梯度提升，因为在传统的gbdt中在第i轮的迭代中，使用前i-1的梯度作为当前残差进行拟合。
 
-5. gbdt为什么用负梯度代表残差？
+5. GBDT为什么用负梯度代表残差？
 > 上文公式(3)是gbdt的损失函数，对公式(3)进行在$f_{m-1}(x)处进行$泰勒的一阶展开:
 > $$L(y,f_m(x))=L(y,f_{m-1}(x)+\beta_m b(x;\gamma_m))$$
 > $$=L(y,f_{m-1}(x))+\frac{\partial L(y, f_{m-1}(x))}{\partial f_{m-1}(x)}(f_{m}(x)-f_{m-1}(x))$$
@@ -96,10 +97,10 @@ CatBoost = Category + Boosting.
 > $$(\beta_m b(x;\gamma_m)) = - \frac{\partial L(y, f_{m-1}(x))}{\partial f_{m-1}(x)} \tag{21}$$
 > 从公式(20)可以看出第m棵树使用前m-1的负梯度作为残差，所有每次都是拟合的负梯度.
 
-6. gbdt是训练过程如何选择特征？
-> gbdt使用基学习器是CART树，CART树是二叉树，每次使用yes or no进行特征选择，数值连续特征使用的最小均方误差，离散值使用的gini指数。在每次划分特征的时候会遍历所有可能的划分点找到最有的特征分裂点，这是用为什么gbdt会比rf慢的主要原因之一。
+6. GBDT是训练过程如何选择特征？
+> GBDT使用基学习器是CART树，CART树是二叉树，每次使用yes or no进行特征选择，数值连续特征使用的最小均方误差，离散值使用的gini指数。在每次划分特征的时候会遍历所有可能的划分点找到最有的特征分裂点，这是用为什么GBDT会比rf慢的主要原因之一。
 
-7. gbdt应用在多分类问题？
+7. GBDT应用在多分类问题？
 > + 对于多分类任务，GDBT的做法是采用一对多的策略也就是说，对每个类别训练M个分类器。假设有K个类别，那么训练完之后总共有M*K颗树。
 > + 两层循环的顺序不能改变。也就是说，K个类别都拟合完第一颗树之后才开始拟合第二颗树，不允许先把某一个类别的M颗树学习完，再学习另外一个类别。
 > <img src='../assert/mult_gbdt.png'/>
@@ -107,7 +108,7 @@ CatBoost = Category + Boosting.
 8. RF和GBDT的区别？
 > GBDT是采用boosing方法，降低偏差；RF采用的是baggging方法，降低方差。其中GBDT中的核心是通过用分类器（如CART、RF）拟合损失函数梯度，而损失函数的定义就决定了在子区域内各个步长，其中就是期望输出与分类器预测输出的查，即bias；而RF的核心就是自采样（样本随机）和属性随机（所有样本中随机选择K个子样本选择最优属性来划分），样本数相同下的不同训练集产生的各个分类器，即数据的扰动导致模型学习性能的变化，即variance。
 
-9. Xgboost相对gbdt做了哪些改进？
+9. Xgboost相对GBDT做了哪些改进？
 > + 传统GBDT以CART作为基分类器，xgboost还支持线性分类器，这个时候xgboost相当于带L1和L2正则化项的逻辑斯蒂回归（分类问题）或者线性回归（回归问题）。
 > + 传统GBDT在优化时只用到一阶导数信息，xgboost则对代价函数进行了二阶泰勒展开，同时用到了一阶和二阶导数。顺便提一下，xgboost工具支持自定义代价函数，只要函数可一阶和二阶求导。
 > + xgboost在代价函数里加入了正则项，用于控制模型的复杂度。正则项里包含了树的叶子节点个数、每个叶子节点上输出的score的L2模的平方和。从Bias-variance tradeoff角度来讲，正则项降低了模型的variance，使学习出来的模型更加简单，防止过拟合，这也是xgboost优于传统GBDT的一个特性。

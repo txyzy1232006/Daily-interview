@@ -27,11 +27,11 @@
    + 主题模型
 6. 优化算法
    + [常见回归和分类损失函数](/machine-learning/loss_functions.md)
-   + [优化器](/machine-learning/optimizer.md)
-   + [正则化与稀疏性](/machine-learning/regularization.md)
+   + [优化器](/machine-learning/optimizer.md) TODO
+   + [正则化与稀疏性](/machine-learning/regularization.md) TODO
 7. 深度学习
    + [基础问题](/machine-learning/deep_learning_basic.md)
-   + [Resnet、Inception、Attention](/machine-learning/dl_structure.md)
+   + [Resnet、Inception、Attention](/machine-learning/dl_structure.md) TODO
    + CNN
    + [RNN](/machine-learning/rnn.md)
    + GAN
@@ -41,9 +41,25 @@
    + [Adaboost](/machine-learning/Adaboost.md)
 
 ### 推荐系统
-   + [GBDT LR](/machine-learning/gbdt_lr.md)
-   + [Word2Vec](/machine-learning/word2vec.md)
-   + [Collaborative Filtering](/machine-learning/collaborative_filtering.md)
+   + 召回
+     + [Collaborative Filtering](/machine-learning/collaborative_filtering.md)
+     + [Word2Vec](/machine-learning/word2vec.md)
+     + Graph Embedding
+   + 排序
+     + [传统模型](/machine-learning/ctr_models.md)
+     + [深度模型](/machine-learning/ctr_deep_models.md)
+     + GNN
+     + 多兴趣、多目标
+   + 策略ctr_deep_models
+     + 召回策略
+     + 实时
+     + 冷启动
+     + 探索与利用
+   + 架构
+     + 数据处理
+     + 离线训练
+     + 上线部署
+   + 评估
 
 ### 数据挖掘
    + [Frequent Pattern](/machine-learning/frequent_pattern.md)
