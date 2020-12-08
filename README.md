@@ -27,7 +27,7 @@
    + 主题模型
 6. 优化算法
    + [常见回归和分类损失函数](/machine-learning/loss_functions.md)
-   + [优化器](/machine-learning/optimizer.md) TODO
+   + [优化器](/machine-learning/optimizer.md)
    + [正则化与稀疏性](/machine-learning/regularization.md) TODO
 7. 深度学习
    + [基础问题](/machine-learning/deep_learning_basic.md)
