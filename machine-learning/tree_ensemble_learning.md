@@ -87,7 +87,7 @@ CatBoost = Category + Boosting.
 > gbdt(Gradient Boosting Decision Tree),dt是指Decision Tree表示使用决策树作为基学习器，使用的cart树，gb表示梯度提升，因为在传统的gbdt中在第i轮的迭代中，使用前i-1的梯度作为当前残差进行拟合。
 
 5. GBDT为什么用负梯度代表残差？
-> 上文公式(3)是gbdt的损失函数，对公式(3)进行在$f_{m-1}(x)处进行$泰勒的一阶展开:
+> 上文公式(3)是gbdt的损失函数，对公式(3)进行在 $f_{m-1}(x)$ 处进行泰勒的一阶展开:
 > $$L(y,f_m(x))=L(y,f_{m-1}(x)+\beta_m b(x;\gamma_m))$$
 > $$=L(y,f_{m-1}(x))+\frac{\partial L(y, f_{m-1}(x))}{\partial f_{m-1}(x)}(f_{m}(x)-f_{m-1}(x))$$
 > $$=L(y,f_{m-1}(x))+\frac{\partial L(y, f_{m-1}(x))}{\partial f_{m-1}(x)}(\beta_m b(x;\gamma_m)) \tag{19}$$
