@@ -48,10 +48,14 @@ context(W)=(Wt−c ,...,Wt−2,Wt−1;Wt+1,Wt+2,...,Wt+c)
 1. 为什么训练得到的字词向量会有如下一些性质，比如向量的夹角余弦、向量的欧氏距离都能在一定程度上反应字词之间的相似性？
 
   答：因为，我们在用语言模型无监督训练时，是开了窗口的，通过前n个字预测下一个字的概率，这个n就是窗口的大小，同一个窗口内的词语，会有相似的更新，这些更新会累积，而具有相似模式的词语就会把这些相似更新累积到可观的程度。
-2. word2vec跟Glove的异同？
-3. word2vec 相比之前的 Word Embedding 方法好在什么地方
+  
+2. word2vec跟Glove的异同？   
+
+3. word2vec 相比之前的 Word Embedding 方法好在什么地方  
+>+ 降维（可升可降），解决稀疏性问题
+>+ 有意义的香菱，表现出了词的相关性（共线性）
+>+ 泛化能力增强，学出了隐藏属性（抽象属性）
 
 reference：
 1. [https://blog.csdn.net/zhangxb35/article/details/74716245](https://blog.csdn.net/zhangxb35/article/details/74716245)
 2. [https://spaces.ac.cn/archives/4122](https://spaces.ac.cn/archives/4122)
-

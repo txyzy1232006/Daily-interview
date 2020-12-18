@@ -91,7 +91,7 @@ CatBoost = Category + Boosting.
 > $$L(y,f_m(x))=L(y,f_{m-1}(x)+\beta_m b(x;\gamma_m))$$
 > $$=L(y,f_{m-1}(x))+\frac{\partial L(y, f_{m-1}(x))}{\partial f_{m-1}(x)}(f_{m}(x)-f_{m-1}(x))$$
 > $$=L(y,f_{m-1}(x))+\frac{\partial L(y, f_{m-1}(x))}{\partial f_{m-1}(x)}(\beta_m b(x;\gamma_m)) \tag{19}$$
-> 从我们的目标是损失函数最小化，使公式(19)最小化，由于$L(y,f_{m-1}(x))$是个常数，所以我们的损失函数最小化可以转化为:
+> 从我们的目标是损失函数最小化，使公式(19)最小化，由于 $L(y,f_{m-1}(x))$ 是个常数，所以我们的损失函数最小化可以转化为:
 > $$argmin_{(\beta_m,\gamma_m)}=min \frac{\partial L(y, f_{m-1}(x))}{\partial f_{m-1}(x)}(\beta_m b(x;\gamma_m)) \tag{20}$$
 > 将上述式子的两项都看做是向量，为了是相乘之后最小，一定是向量之间的异号,因此得到:
 > $$(\beta_m b(x;\gamma_m)) = - \frac{\partial L(y, f_{m-1}(x))}{\partial f_{m-1}(x)} \tag{21}$$
@@ -106,7 +106,7 @@ CatBoost = Category + Boosting.
 > <img src='../assert/mult_gbdt.png'/>
 
 8. RF和GBDT的区别？
-> GBDT是采用boosing方法，降低偏差；RF采用的是baggging方法，降低方差。其中GBDT中的核心是通过用分类器（如CART、RF）拟合损失函数梯度，而损失函数的定义就决定了在子区域内各个步长，其中就是期望输出与分类器预测输出的查，即bias；而RF的核心就是自采样（样本随机）和属性随机（所有样本中随机选择K个子样本选择最优属性来划分），样本数相同下的不同训练集产生的各个分类器，即数据的扰动导致模型学习性能的变化，即variance。
+> GBDT是采用boosing方法，降低偏差；RF采用的是baggging方法，降低方差。其中GBDT中的核心是通过用分类器（如CART、RF）拟合损失函数梯度，而损失函数的定义就决定了在子区域内各个步长，其中就是期望输出与分类器预测输出的差，即bias；而RF的核心就是自采样（样本随机）和属性随机（所有样本中随机选择K个子样本选择最优属性来划分），样本数相同下的不同训练集产生的各个分类器，即数据的扰动导致模型学习性能的变化，即variance。
 
 9. Xgboost相对GBDT做了哪些改进？
 > + 传统GBDT以CART作为基分类器，xgboost还支持线性分类器，这个时候xgboost相当于带L1和L2正则化项的逻辑斯蒂回归（分类问题）或者线性回归（回归问题）。
